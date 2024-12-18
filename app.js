@@ -50,6 +50,7 @@ var selectedObject = null
 var deletedObjectArray = [];
 
 
+
 // -----------------------------------------------------------------------------------------------------------
 /**
  * Event listener for clicking inside canvas
@@ -86,8 +87,10 @@ canvas.addEventListener("mousemove",(e)=>{
 })
 // ------------------------------------------------------------------------------------------------------------
 
-
-
+/**
+ * variable to store the last double clicked element which will be pushed into doubleClickedArray when destroy button is clicked
+ */
+var elementDoubleClicked = null;
 
 //-------------------------------------------------------------------------------------------------------
 /**
@@ -98,11 +101,9 @@ canvas.addEventListener("dblclick",(e)=>{
     let xClick = e.clientX - rect.left;   //left - x coordinate in reference to canvas
     let yClick = e.clientY - rect.top;
     arr.forEach((item)=>{
-        if(item.isSelected(xClick,yClick)){
-            if(deletedObjectArray.indexOf(item)==-1){
-                deletedObjectArray.push(item);  
-            }  
-            console.log(deletedObjectArray);
+        if(item.isSelected(xClick,yClick)){ 
+            elementDoubleClicked = item;
+            console.log(elementDoubleClicked);
         }
     })
 })
@@ -234,10 +235,15 @@ function drawCircle(){
  * this function executes on clicking Destroy button and it sets Timeout of 5 sec to destroy selected object by acessing them from deletedObjectArray
  */
 function deleteObject(){
-    setTimeout(()=>{
-        let toBeDeleted = deletedObjectArray[0];
-        deletedObjectArray.splice(0,1);
-        toBeDeleted.delete();
-        drawCircleAgain(context);
-    },5000)
+    if(elementDoubleClicked){
+        deletedObjectArray.push(elementDoubleClicked);
+        setTimeout(()=>{
+            let toBeDeleted = deletedObjectArray[0];
+            deletedObjectArray.splice(0,1);
+            toBeDeleted.delete();
+            drawCircleAgain(context);
+        },4000)
+        elementDoubleClicked = null;
+    }
+  
 }
