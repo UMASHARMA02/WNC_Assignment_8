@@ -1,0 +1,27 @@
+#container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    background-color: #74a892;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+#imageInput{
+    width: 100%;
+    height: 100%;
+}
+#background{
+    margin: 0px;
+    padding: 0px;
+}
+p{
+    text-align: center;
+}
+#instructions{
+    background-color: #e5c185;
+    padding: 5px;
+}

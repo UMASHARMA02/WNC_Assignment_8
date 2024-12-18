@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <title>Canva Editng</title>
+</head>
+<body>
+    <h1>Welcome to my Editing Page</h1>
+    <div id="instructions">
+        <p><b>CLICK </b>to Drag Circles ! </p>
+        <p><b>DOUBLE CLICK </b>to Delete Circles !</p>
+    </div>
+    <div id="container">
+        <input type="file" id="imageInput" accept="image/*">
+        <div id="background">
+            <canvas id="myCanvas" width="600" height="400" style="border:1px solid black;"></canvas>
+        </div> 
+        <button onclick="drawCircle()">Circle</button>
+        <button onclick="deleteObject()">Delete in 5 seconds</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
