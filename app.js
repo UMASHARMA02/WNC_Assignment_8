@@ -191,6 +191,9 @@ class Circle{
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * this function deletes selected object(by double clicking) from arr (array which stres all the created object)
+     */
     delete(){
         let index = arr.indexOf(this);
         arr.splice(index,1);
@@ -227,7 +230,9 @@ function drawCircle(){
     // console.log(arr);  
 }
 
-
+/**
+ * this function executes on clicking Destroy button and it sets Timeout of 5 sec to destroy selected object by acessing them from deletedObjectArray
+ */
 function deleteObject(){
     setTimeout(()=>{
         let toBeDeleted = deletedObjectArray[0];
