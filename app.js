@@ -119,6 +119,14 @@ canvas.addEventListener("dblclick",(e)=>{
  * and constructor which accepts X-coordinate, Y-coordinate, Radius, Color and Text to be displayed
  */
 class Circle{
+     /**
+     * constructor function to initialise the circle object
+     * @param {number} x x-coordinate of center of circle
+     * @param {number} y y-oordinate of center of circle
+     * @param {number} r radius of circle
+     * @param {rgb} color  color of the circle
+     * @param {number} text count of the total objects created
+     */
     constructor(x,y,r,color,text){
         this.text = text;
         this.x = x;
@@ -130,7 +138,7 @@ class Circle{
     /////////////////////////////////////////////////////////////////////////////////////////////
     /**
      * 
-     * @param {*} context context of canvas
+     * @param {context} context context of canvas
      * function to draw circle - set its width, color, font and coordinated 
      */
     draw(context){
@@ -155,8 +163,8 @@ class Circle{
     //////////////////////////////////////////////////////////////////////////////////////////////
     /**
      * function to check if the object is selected or not
-     * @param {*} xClick x-coordinate where the mouse clicked on the screen
-     * @param {*} yClick y-coordinate where the mouse clicked on the screen
+     * @param {number} xClick x-coordinate where the mouse clicked on the screen
+     * @param {number} yClick y-coordinate where the mouse clicked on the screen
      * @returns boolean
      */
     isSelected(xClick,yClick){
@@ -183,8 +191,8 @@ class Circle{
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
      * setting x and y coordinate according to mouse position
-     * @param {*} screen_x x-coordinate of mouse relative to the circle plus 3/2 times radius
-     * @param {*} screen_y y-coordinate of mouse relative to the circle plus 3/2 times radius
+     * @param {number} screen_x x-coordinate of mouse relative to the circle plus 3/2 times radius
+     * @param {number} screen_y y-coordinate of mouse relative to the circle plus 3/2 times radius
      */
     move2(screen_x,screen_y){
         this.x = screen_x;
@@ -204,7 +212,7 @@ class Circle{
 
 /**
  * function to redraw all the objects of circle after one object has been moved
- * @param {*} context context of canvas
+ * @param {context} context context of canvas
  */
 function drawCircleAgain(context){
     context.clearRect(0, 0, canvas.width, canvas.height);
